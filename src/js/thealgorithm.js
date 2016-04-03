@@ -9,9 +9,9 @@ let thealgorithm = () => {
 
 	var sounds = [
 		{index: 0, id: "danke", src:"danke-tambourine"},
-		// {index: 1, id: "cod2pac", src:"cod2pac-2-hara-luu-loop-chippy-120"},
-		// {index: 2, id: "fanto8bc", src:"fanto8bc-fto-break-beat-120"},
-		// {index: 3, id: "theshivaeffect", src:"theshivaeffect-interesting-drum-pattern"},
+		{index: 1, id: "cod2pac", src:"cod2pac-2-hara-luu-loop-chippy-120"},
+		{index: 2, id: "fanto8bc", src:"fanto8bc-fto-break-beat-120"},
+		{index: 3, id: "theshivaeffect", src:"theshivaeffect-interesting-drum-pattern"},
 	];
 
 	let createInput = (name, min, max, handler) => {
@@ -75,8 +75,8 @@ let thealgorithm = () => {
 			loaded++;
 			log(`loaded!  ${i} ${loaded}`);
 
-			createInput("cutoff " + soundID, 0, 10000, handleFilter);
-			createInput("vol " + soundID, 0, 100, handleVolume);
+			createInput(`${soundID} filter ${filter}`, 0, 10000, handleFilter);
+			createInput(`${soundID} volume`, 0, 100, handleVolume);
 
 			if (loaded === sounds.length) {
 				log("playing music");
